@@ -1,0 +1,208 @@
+% clean start
+
+% Choose the language
+\ifxetexorluatex
+	\usepackage{polyglossia}
+	\setmainlanguage{english}
+\else
+	\usepackage[ngerman, english]{babel} % Load characters and hyphenation
+\fi
+\usepackage[english=american]{csquotes}	% English quotes
+
+\usepackage{enumitem}
+
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{siunitx}
+\sisetup{
+   separate-uncertainty
+}
+\usepackage{physics}
+
+
+% Load the bibliography package
+\usepackage[giveninits=true]{kaobiblio}
+\addbibresource{references.bib} % Bibliography file
+
+\ifdefined\rm
+\renewcommand{\rm}{\mathrm}
+\else
+\newcommand{\rm}{\mathrm}
+\fi
+
+\ifdefined\gev
+\renewcommand{\gev}{\giga\electronvolt}
+\else
+\newcommand{\gev}{\giga\electronvolt}
+\fi
+
+\ifdefined\mev
+\renewcommand{\mev}{\mega\electronvolt}
+\else
+\newcommand{\mev}{\mega\electronvolt}
+\fi
+
+% define HNL mixing abbreviations
+\def\ue4{$|U_{e4}|^2$}
+\def\um4{$|U_{\mu4}|^2$}
+\def\ut4{$|U_{\tau4}|^2$}
+
+
+% Load mathematical packages for theorems and related environments
+\usepackage[framed=true]{kaotheorems}
+\usepackage{amsmath}
+
+% Load the package for hyperreferences
+\usepackage{kaorefs}
+
+\usepackage{caption}
+\usepackage{subcaption}
+
+\graphicspath{{./}{figures/}} % Paths in which to look for images
+
+% \makeindex[columns=3, title=Alphabetical Index, intoc] % Make LaTeX produce the files required to compile the index
+
+
+% for Alex' crazy tikz stuff...
+\usepackage{pgfplots}
+\usepackage{pgfplotstable}
+\usepgfplotslibrary{fillbetween}
+
+\ifxetexorluatex
+    % do nothing
+\else
+    \DeclareUnicodeCharacter{2212}{−}
+\fi
+
+\usepgfplotslibrary{groupplots,dateplot}
+\usetikzlibrary{patterns,shapes,arrows}
+\usetikzlibrary{fadings}
+\pgfplotsset{compat=newest}
+
+\usepackage{feynmp-auto}
+\usepackage[compat=1.1.0]{tikz-feynman}
+
+% global color definitions
+\definecolor{black}{RGB}{0,0,0}
+\definecolor{orange}{RGB}{230, 159, 0}
+\definecolor{skyblue}{RGB}{86, 180, 233}
+\definecolor{bluishgreen}{RGB}{0, 158, 115}
+\definecolor{yellow}{RGB}{240, 228, 66}
+\definecolor{blue}{RGB}{0, 114, 178}
+\definecolor{vermilion}{RGB}{213, 94, 0}
+\definecolor{reddishpurple}{RGB}{204, 121, 167}
+
+\definecolor{tab_orange}{RGB}{255, 128, 14}
+\definecolor{tab_blue}{RGB}{0, 107, 164}
+
+\definecolor{lightgray204}{RGB}{204,204,204}
+
+\tikzstyle{nue_color}=[orange]
+\tikzstyle{numu_color}=[bluishgreen]
+\tikzstyle{nutau_color}=[skyblue]
+% color for any "all NC" plots
+\tikzstyle{nc_color}=[reddishpurple]
+\tikzstyle{noise_color}=[blue]
+\tikzstyle{muon_color}=[vermilion]
+% color for all combined nu flavors
+\tikzstyle{nu_color}=[bluishgreen]
+
+% plot an error band assuming that a table has been loaded.
+% Syntax: \ploterrorband[style]{column_name}{scale_factor}
+% The column name and the column "column_name__err" must exist. The
+% scale factor scales the entire error band at once.
+\newcommand{\ploterrorband}[3][black]{
+	\addplot[const plot, #1, thick] table [x=bin_edges, y expr=\thisrow{#2} * #3] from \table;
+    \addplot[const plot, #1, thin, name path=err_lo, forget plot] table[x=bin_edges, y expr=(\thisrow{#2}-\thisrow{#2__err}) * #3] from \table;
+    \addplot[const plot, #1, thin, name path=err_hi, forget plot] table[x=bin_edges, y expr=(\thisrow{#2}+\thisrow{#2__err}) * #3] from \table;
+    \addplot[#1, opacity=0.5, forget plot] fill between[of = err_lo and err_hi];
+}
+
+\newcommand{\plotratioerrorband}[3][black]{
+	\addplot[const plot, #1, thick] table [x=bin_edges, y expr=\thisrow{#2} / \thisrow{#3}] from \table;
+
+    \addplot[const plot, #1, thin, name path=err_lo, forget plot] table[x=bin_edges,
+    y expr=
+    	\thisrow{#2} / \thisrow{#3}
+		-
+		sqrt(
+            (\thisrow{#2} * \thisrow{#3__err})^2 + (\thisrow{#3} * \thisrow{#2__err})^2 - (2 * \thisrow{#2} * \thisrow{#3} * \thisrow{#2__err}^2)
+		) / \thisrow{#3}^2
+	] from \table;
+
+	\addplot[const plot, #1, thin, name path=err_hi, forget plot] table[x=bin_edges,
+    y expr=
+    	\thisrow{#2} / \thisrow{#3}
+		+
+		sqrt(
+            (\thisrow{#2} * \thisrow{#3__err})^2 + (\thisrow{#3} * \thisrow{#2__err})^2 - (2 * \thisrow{#2} * \thisrow{#3} * \thisrow{#2__err}^2)
+		) / \thisrow{#3}^2
+	] from \table;
+
+    \addplot[#1, opacity=0.5, forget plot] fill between[of = err_lo and err_hi];
+}
+
+
+\pgfplotsset{error bar legend/.style={%
+    /pgfplots/legend image code/.prefix code={%
+      \pgfkeysgetvalue{/pgfplots/error bars/error mark}{\pgfplotserrorbarsmark}%
+      \draw[%
+        /pgfplots/every error bar,
+        mark=\pgfplotserrorbarsmark,
+        /pgfplots/error bars/error mark options,
+        sharp plot,
+        ##1
+      ] plot coordinates {(0.3cm, -0.1cm) (0.3cm, 0.1cm)};%
+    }
+  }
+}
+
+\newcommand{\ploterrorbar}[2][black]{
+    \addplot[
+        mark=*,
+        mark options={scale=0.5, fill=black},
+        #1,
+        only marks,
+        error bar legend,
+        error bars/.cd,
+        x dir=none,
+        y dir=both,
+        y explicit
+    ] table [x=bin_midpoints, y=#2, y error=#2__err]  from \table;
+}
+
+% This package changes the font to serif when compiling with Lualatex (and doesn't)
+% work correctly without Lualatex.
+%\usepackage{helvet}
+\usepackage[eulergreek]{sansmath}
+\pgfplotsset{
+    tick label style = {font=\footnotesize\sansmath\sffamily},
+    every axis label = {font=\footnotesize\sansmath\sffamily},
+    % the eulergreek style for math looks oddly different from the
+    % rest of the document, so we omit \sansmath here
+    label style = {font=\footnotesize\sffamily},
+    % global legend style applied to all plots (set per plot to override)
+    legend style = {
+        font=\footnotesize\sffamily,
+        fill opacity=0.8,
+        draw opacity=1,
+        text opacity=1,
+        at={(0.5,0.95)},
+        anchor=north,
+        draw=lightgray204,
+        % hack to get better legend spacing, see
+        % https://tex.stackexchange.com/questions/18152/how-can-i-adjust-the-horizontal-spacing-between-legend-entries-in-pgfplots
+        /tikz/every even column/.append style={column sep=0.1cm}
+    },
+    legend cell align={left}
+}
+
+\tikzstyle{plot annotation}=[
+    font=\footnotesize\sffamily,
+    fill opacity=0.8,
+    draw opacity=1,
+    text opacity=1,
+    draw=lightgray204,
+    fill=white
+]

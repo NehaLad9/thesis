@@ -1,252 +1,81 @@
-% Load the kaobook class
-\documentclass[
-	fontsize=10pt, % Base font size
-	twoside=true, % Use different layouts for even and odd pages (in particular, if twoside=true, the margin column will be always on the outside)
-	%open=any, % If twoside=true, uncomment this to force new chapters to start on any page, not only on right (odd) pages
-	numbers=noenddot,
-	secnumdepth=1, % How deep to number headings. Defaults to 1 (sections)
-]{kaobook}
-\setcounter{secnumdepth}{3} % number subsubsections
-\setcounter{tocdepth}{3} % put subsubsections in ToC
-\renewcommand{\marginlayout}{%
-	\newgeometry{
-		top=25mm,             % height of the top margin
-		bottom=25mm,          % height of the bottom margin
-		inner=25mm,           % width of the inner margin
-		textwidth=100mm,        % width of the text
-		marginparsep=8.2mm,     % width between text and margin
-		marginparwidth=49.4mm,  % width of the margin
-	}%
-}
-
-% Choose the language
-\usepackage[english]{babel} % Load characters and hyphenation
-\usepackage[english=british]{csquotes}	% English quotes
-
-
-% Load packages for testing
-\usepackage{blindtext}
-%\usepackage{showframe} % Uncomment to show boxes around the text area, margin, header and footer
-\usepackage{showlabels} % Uncomment to output the content of \label commands to the document where they are used
-\usepackage{adjustbox}
-% Load the bibliography package
-\usepackage{kaobiblio}
-\addbibresource{minimal.bib} % Bibliography file
-\usepackage{todonotes}
-
-% 
-% \usepackage{xargs}                      % Use more than one optional parameter in a new commands
-% \usepackage[pdftex,dvipsnames]{xcolor}  
-% \usepackage[colorinlistoftodos,prependcaption,textsize=tiny]{todonotes}
-% \newcommand{\unsure}[2][1=]{\todo[linecolor=red,backgroundcolor=red!25,bordercolor=red,#1]{#2}}
-% \newcommand{\change}[2][1=]{\todo[linecolor=blue,backgroundcolor=blue!25,bordercolor=blue,#1]{#2}}
-% \newcommand{\info}[2][1=]{\todo[linecolor=OliveGreen,backgroundcolor=OliveGreen!25,bordercolor=OliveGreen,#1]{#2}}
-% \newcommand{\improvement}[2][1=]{\todo[linecolor=Plum,backgroundcolor=Plum!25,bordercolor=Plum,#1]{#2}}
-% \newcommand{\thiswillnotshow}[2][1=]{\todo[disable,#1]{#2}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% kaobook
+% LaTeX Class
+% Version 0.9.8 (2021/08/23)
 %
+% For the latest template development version and to make contributions:
+% https://github.com/fmarotta/kaobook
+%
+% Authors:
+% Federico Marotta (federicomarotta@mail.com)
+% Based on the doctoral thesis of Ken Arroyo Ohori (https://3d.bk.tudelft.nl/ken/en)
+% and on the Tufte-LaTeX class.
+%
+% License:
+% LPPL (see included MANIFEST.md file)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[
+    a4paper, % page size
+    fontsize=10pt, % font size
+    twoside=true, % layouts for even and odd pages (in particular, if twoside=true, the margin column will be always on the outside)
+	numbers=noenddot, % dots after chapter numbers (option are: enddot, noenddot and auto)
+	fontmethod=tex, % "modern" with XeLaTeX or LuaTex; "tex" is the default for PdfLaTex
+]{kaobook}
+
+\input{packages_and_formatting.tex}
+
+\begin{document} 
+
+\frontmatter
+
+\include{chapters/titlepage}
+
+\cleardoublepage
 
 
-% Load mathematical packages for theorems and related environments
-\usepackage{kaotheorems}
+\cleardoublepage
+\phantomsection
 
-% Load the package for hyperreferences
-\usepackage{kaorefs}
+\include{chapters/abstract}
+\include{chapters/zusammenfassung}
+\cleardoublepage
 
-\graphicspath{{images/}{./figures}} % Paths where images are looked for
+\tableofcontents
 
-\makeindex[columns=3, title=Alphabetical Index, intoc] % Make LaTeX produce the files required to compile the index
+\mainmatter
 
-
-\begin{document}
-
-%----------------------------------------------------------------------------------------
-%	BOOK INFORMATION
-%----------------------------------------------------------------------------------------
-
-\KOMAoptions{twoside=false}
-\begin{titlepage}
-	\begin{center}
-	\vspace*{0.6cm}
-	
-	\LARGE
-	\textbf{Something about Taus and Flavour in Icecube}
-	\large
-	
-	\vspace{0.8cm}
-	
-	\textbf{Dissertation}\\
-	zur Erlangung des akademischen Grades\\
-	doctor rerum naturalium \\ 
-	(Dr. rer. nat.) \\
-	
-	\vspace{0.5cm}
-	
-	im Fach: Physik \\
-	Spezialisierung: Experimentalphysik\\
-	
-	\vspace{0.5cm}
-	
-	eingereicht an der \\
-	Mathematisch-Naturwissenschaftlichen Fakultät\\	
-	der Humboldt-Universität zu Berlin\\
-	
-	\vspace{0.5cm}
-	
-	von\\
-	\textbf{Neha Lad M. Sc}\\
-%	\vspace{0.8cm}
-	
-	\vspace{0.5cm}
-	%Präsidentin der Humboldt-Universität zu Berlin\\
-	%Prof. Dr.-Ing. Dr. Sabine Kunst\\
-	 
-	\vspace{0.5cm}
-	 
-	%Dekan der Mathematisch-Naturwissenschaftlichen Fakultät\\
-	%Prof. Dr. Elmar Kulke\\
-	
-	\vspace{0.5cm}
-	Gutachter:\\
-	Prof. Dr. Marek Kowalski, Humboldt-Universität zu Berlin\\
-	%Prof. Dr. Walter Winter, Humboldt-Universität zu Berlin\\
-	%Prof. Dr. Antoine Kouchner,  Université de Paris\\
-	\vspace{0.5cm}
-	Tag der mündlichen Prüfung: date, month 2024
-	
-	\end{center}
-	\newpage
-	
-	\vspace*{8cm}
-	
-	\textbf{Copyright Notice}\\
-	This book is released into the public domain using the CC-BY-4.0 code. 
-	
-	To view a copy of the CC-BY-4.0 code, visit: \\\url{https://creativecommons.org/licenses/by/4.0/}
-	
-	\medskip
-	\textbf{Colophon} \\
-	This document was typeset with the help of \href{https://sourceforge.net/projects/koma-script/}{\KOMAScript} and \href{https://www.latex-project.org/}{\LaTeX} using the open-source \href{https://github.com/fmarotta/kaobook/}{kaobook} template class.\\
-	
-	The source code of this thesis is available at:\\\url{https://github.com//kaobook}, \\while the scripts used to generate the plots are available at: \\\url{https://github.com/NehaLad9/thesis.git}\\
-	
-	\medskip
-	
-	\textbf{Publisher} \\
-	First printed in 2024 by Humboldt Universität zu Berlin
-	
-	\newpage
-	
-	\vspace*{5.0cm}
-	
-%\afterpage{\blankpage}
-	
-\end{titlepage}
-%----------------------------------------------------------------------------------------
-
-\frontmatter % Denotes the start of the pre-document content, uses roman numerals
+% \include{chapters/neutrino_icecube}
 
 
-%----------------------------------------------------------------------------------------
-%	PREFACE
-%----------------------------------------------------------------------------------------
+\include{chapters/Gen2results}
+\cleardoublepage
 
-\input{chapters/abstract.tex}
-\input{chapters/zusammenfassung.tex}
-\cleardoubleoddpage
-
-
-%----------------------------------------------------------------------------------------
-%	TABLE OF CONTENTS & LIST OF FIGURES/TABLES
-%----------------------------------------------------------------------------------------
-
-\begingroup % Local scope for the following commands
-
-% Define the style for the TOC, LOF, and LOT
-%\setstretch{1} % Uncomment to modify line spacing in the ToC
-%\hypersetup{linkcolor=blue} % Uncomment to set the colour of links in the ToC
-\setlength{\textheight}{230\vscale} % Manually adjust the height of the ToC pages
-
-% Turn on compatibility mode for the etoc package
-\etocstandarddisplaystyle % "toc display" as if etoc was not loaded
-\etocstandardlines % "toc lines as if etoc was not loaded
-\listoftodos[Notes]
-\tableofcontents % Output the table of contents
-
-\listoffigures % Output the list of figures
-
-% Comment both of the following lines to have the LOF and the LOT on different pages
-% \let\cleardoublepage\bigskip
-% \let\clearpage\bigskip
-
-\listoftables % Output the list of tables
-
-\endgroup
-\cleardoubleoddpage
-%----------------------------------------------------------------------------------------
-%	MAIN BODY
-%----------------------------------------------------------------------------------------
-
-\mainmatter % Denotes the start of the main document content, resets page numbering and uses arabic numbers
-\setchapterstyle{kao} % Choose the default chapter heading style
-\input{chapters/introduction.tex}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%Intro Chapters%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%
-\pagelayout{wide} % No margins
-\addpart{A Brief Introduction of Neutrinos in AstroParticle Physics}
-\pagelayout{margin} % Restore margins
-\input{chapters/neutrino_theory.tex}
-\input{chapters/neutrino_icecube.tex}
-
-%%%%%%%%%%%%%%%%%%%%%%%%
-%%%Analysis Chapters %%%
-%%%%%%%%%%%%%%%%%%%%%%%%
-\pagelayout{wide} % No margins
-\addpart{Tau neutrino identification and flavour composition analysis}
-\pagelayout{margin} % Restore margins
-\input{chapters/EventSamples.tex}
-\input{chapters/FlavourAnalysis.tex}
-
-%%%%%%%%%%%%%%%%%%%%%%%%
-%%%Result Chapters %%%
-%%%%%%%%%%%%%%%%%%%%%%%%
-\pagelayout{wide} % No margins
-\addpart{Result}
-\pagelayout{margin} % Restore margins
-\input{chapters/HESE12Results.tex}
-\input{chapters/CombinedFitResults.tex}
-\input{chapters/Gen2results.tex}
-
-\appendix % From here onwards, chapters are numbered with letters, as is the appendix convention
-
-\pagelayout{wide} % No margins
+\appendix
+\pagelayout{wide}
 \addpart{Appendix}
-\pagelayout{margin} % Restore margins
+\pagelayout{margin}
+% \input{chapters/appendix}
 
+\backmatter
 
-%----------------------------------------------------------------------------------------
+\cleardoublepage
+\phantomsection
+\addcontentsline{toc}{chapter}{Figures}
+\listoffigures
 
-\backmatter % Denotes the end of the main document content
-\setchapterstyle{plain} % Output plain chapters from this point onwards
+\cleardoublepage
+\phantomsection
+\addcontentsline{toc}{chapter}{Tables}
+\listoftables
 
-%----------------------------------------------------------------------------------------
-%	BIBLIOGRAPHY
-%----------------------------------------------------------------------------------------
+\setchapterstyle{plain}
 
-% The bibliography needs to be compiled with biber using your LaTeX editor, or on the command line with 'biber main' from the template directory
+\defbibnote{bibnote}{Here are the references in citation order.\par\bigskip}
+\printbibliography[heading=bibintoc, title=Bibliography, prenote=bibnote]
 
-\defbibnote{bibnote}{Here are the references in citation order.\par\bigskip} % Prepend this text to the bibliography
-\printbibliography[heading=bibintoc, title=Bibliography, prenote=bibnote] % Add the bibliography heading to the ToC, set the title of the bibliography and output the bibliography note
+%\include{acknowledgements}
 
-%----------------------------------------------------------------------------------------
-%	INDEX
-%----------------------------------------------------------------------------------------
-
-% The index needs to be compiled on the command line with 'makeindex main' from the template directory
-
-\printindex % Output the index
-
+% \input{declaration.tex}
 
 \end{document}
