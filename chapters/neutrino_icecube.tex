@@ -1,26 +1,16 @@
 \setchapterpreamble[u]{\margintoc}
-\chapter{Neutrinos in IceCube} \labch{nu_icecube}
+\chapter{Neutrinos in IceCube} 
+\labch{nu_icecube}
 
 % Ever since the discovery of neutrino by Cowans and Reines \sidecite{nu_discovery},significant advancements have been made in detector technologies.
 % These include the radiochemical detection of MeV-scale neutrinos produced by nuclear fusion in the Sun \sidecite{solarneutrinos}, and the detection of higher energy atmospheric neutrinos in deep underground telescopes \sidecite{ACHAR1965196,PhysRevLett.15.429}.
 % The observation of neutrinos from supernova 1987a \sidecite{SN1987A_Baksan,SN1987A_superK,SN1987A_IMB} marked a significant milestone in astronomical research as it was the first-ever observation of such an event through these messengers, thereby opening a new window in the field of astronomy. \par
 
-The birth of neutrino astronomy has led to the development of specific neutrino telescopes designed to explore the cosmos using these elusive particles. 
-This chapter introduces the IceCube Neutrino Observatory, an advanced detector whose data forms the basis of the analysis discussed in this thesis. 
-Later sections will explore different types of neutrino interactions and explain how experiments like IceCube can be used to detect the particle products of these interactions.\par 
-
-\section{Detection of Neutrinos} 
-\label{sec:nu_detection}
-
-\subsection{Neutrino-Nucleaon Deep Inelastic Scattering}
-\subsection{Energy losses of Particles in ice}
-\subsection{Cherenkov Radiations}
-
-
+The birth of neutrino astronomy has led to the development of specific neutrino telescopes designed to explore the cosmos using these elusive particles. This chapter introduces the IceCube Neutrino Observatory, a neutrino detector whose data forms the basis of the analysis presented in this thesis. Later sections will 
 
 \section{IceCube Neutrino Observatory}
 \label{IC_detector}
-As described in \ref{sec:nu_detection},the detection of high-energy neutrinos requires a large detector due to their small interaction cross-section. When these neutrinos interact, they produce Cherenkov photons which are produced due to the passage of charged daughter particles. Therefore, the detector must be transparent to these photons. Such a large detector volume can be acquired by using natural resources such as large bodies of water or ice; by deploying photosensors underneath to create a sufficiently sized detector.\par
+As described in \ref{sec:nu_interactions},the detection of high-energy neutrinos requires a large detector due to their small interaction cross-section. When these neutrinos interact, they produce Cherenkov photons which are produced due to the passage of charged daughter particles (see \ref{sec:cherenkov}). Therefore, the detector must be transparent to these photons. Such a large detector volume can be acquired by using natural resources such as large bodies of water or ice; by deploying photosensors underneath to create a sufficiently sized detector.\par
 This concept was first introduced in 1960 \sidecite{Markov:1960vja}. The groundwork for implementing such a detector began with water-based experiments like DUMAND \sidecite{PhysRevD.42.3613}, which was planned to be deployed in the sea near the main island of Hawaii and another detector with a similar design Lake Baikal \sidecite{BELOLAPTIKOV1997263}. First ever large-scale neutrino telescope built was predecessor of IceCube experiment called AMANDA \sidecite{ANDRES20001} at the geographic South Pole. A few hundred optical modules were dropped under the ice sheet of this dry continent between the depth of 1.5 to 2 km. Needless to say, the IceCube detector, the largest neutrino telescope in the world today, benefitted greatly in terms of design and performance from all the research and development work that was done with AMANDA. 
 There also exists a large volume water-based neutrino telescope in the Northern Hemisphere called ANTARES\sidecite{AGERON201111}, and its successor KM3NeT\sidecite{MARGIOTTA201483}, located in the Mediterranean Sea.\par
 The following subsections will discuss various detector and hardware components of the IceCube detector. Additionally, the last section will cover the optical properties of the South Pole ice, as these properties strongly affect the analysis observable and therefore influence the flavor measurements presented in this thesis.\par
@@ -86,21 +76,24 @@ The construction of the detector started taking place in 2005 and lasted for 7 A
 \textbf{The Digital Optical Module} (DOM) is a crucial component of the IceCube Neutrino Observatory, functioning as the heart of the detector. Each DOM is responsible for collecting the faint light signals produced by neutrino interactions in the Antarctic ice, amplifying these signals, and transmitting the data to the IceCube Lab \cite{Aartsen_2017}. From there, the data is relayed to the Northern Hemisphere via a satellite for further analysis. 
 
 Inside each DOM, a 10-inch Photo Multiplier Tube (PMT) is positioned at the bottom, accompanied by essential circuitry for power conversion, data acquisition, calibration, control, and data transfer. Individual components of a DOM are as shown in \reffig{DOM_schematic}, functions of each of which is explained briefly below.
-\begin{marginfigure}
-    %\vspace*{-4.5cm}
-    \includegraphics{./figures/nu_in_icecube/domfig2a-CableAssembly.pdf}
-    \caption{A schematic of DOM CableAssembly being deployed in a water hole, created by hot water drill \cite{Aartsen_2017}.}
-    \labfig{DOM_assembly}
-\end{marginfigure}
-
-\begin{marginfigure}
-	\includegraphics{./figures/nu_in_icecube/domfig1a-DOM3DModel.pdf}
-	\caption{A schematic of the DOM, showing its main components \cite{Aartsen_2017}.}
-	\labfig{DOM_schematic}
-\end{marginfigure}
 
 \begin{description}
+
     \item[Glass Vessel Properties :] The glass vessel of the DOM is engineered to withstand the extreme pressures found in the deep Antarctic ice. This includes the constant long-term pressure of about 250 bar and the temporary pressure spikes of up to 690 bar experienced during the refreezing process after deployment using a hot water drill. The vessel is composed of two 0.5-inch thick hollow glass hemispheres, which are joined together with optical glue. This design not only provides a robust and hermetic seal to protect the internal electronics but also maintains the optical clarity necessary for the PMT to function effectively. The glass material is chosen for its strength, transparency, and resistance to the harsh conditions in the ice.
+
+    \begin{marginfigure}
+        % \vspace*{4.5cm}
+        \includegraphics{./figures/nu_in_icecube/domfig2a-CableAssembly.pdf}
+        \caption{A schematic of DOM CableAssembly being deployed in a water hole, created by hot water drill \cite{Aartsen_2017}.}
+        \labfig{DOM_assembly}
+    \end{marginfigure}
+    
+    \begin{marginfigure}
+        % \vspace*{4.5cm}
+        \includegraphics{./figures/nu_in_icecube/domfig1a-DOM3DModel.pdf}
+        \caption{A schematic of the DOM, showing its main components \cite{Aartsen_2017}.}
+        \labfig{DOM_schematic}
+    \end{marginfigure}
 
     \item[PMT :] The PMT within the DOM is a 10-inch diameter tube that utilizes a box-and-line dynode chain with 10 stages to amplify the faint light signals detected in the ice. The PMTs used in standard in-ice DOMs have a quantum efficiency peaking at 25\% whereas, DeepCore DOMs, designed to detect lower energy neutrinos, feature PMTs with a higher peak quantum efficiency of 34\% near the 390 nm wavelength. These PMTs are operated at a gain of $10^7$.
 
@@ -132,7 +125,81 @@ The aforementioned digitization only happens if the voltage threshold of the onb
 Various algorithms are used to make an estimate of event properties such as direction, deposited energy, morphology etc. The South Pole has limited computational resources, so only simple first guess algorithms can be used there called \emph{online filters}. Processed data is transmitted to the Northern Hemisphere. After this, more sophisticated reconstruction algorithms are applied to reduce and tailor the data as per Physics analysis goal. \todo{cite simulation/reco chapter here}
 
 
+
+\section{Detection of Neutrinos in IceCube}
+\label{sec:nu_detcetion_ic}
+As described in \ref{sec:int_channels}, regardless of the type of neutrino interaction (NC or CC), a variety of secondary particles are generated. In the case of a CC interaction, an accompanying charged lepton absorbs some energy, which can then undergo further decay or interact within the ice volume, leading to the production of more particles. Moreover, secondary particles, regardless of the interaction type, may also include hadrons, which are not always charged. This can, in turn, reduce the amount of \emph{visible} light in the detector. In this section, propagation of these leptons and hadrons in ice shall be explained in brief, followed by Cherenkov effect, a phenomenon by which IceCube DOMs observes these photons from the neutrino interactions. Lastly, various morphologies of these interactions will be discussed in the context of IceCube and similar detectors.
+
+\subsection{Particle propgation in-ice}
+\label{sec:particle_propgation}
+When a charged particle moves through a medium like ice, it loses energy due to interactions with the medium's particles. This energy loss is characterized by the quantity $ \frac{dE}{dx} $, where $ dE $ represents the energy lost and $ dx $ the area of the medium traversed, typically measured in $\text{g/cm}^2$. Four primary processes contribute to the energy loss profile of a particle in such a medium: continuous ionization losses and radiative losses due to bremsstrahlung, pair production, and photonuclear interactions. \emph{Ionization} occurs when the particle collides with shell electrons of the atoms in the medium, causing a continuous energy loss that scales logarithmically with the particle's energy \sidecite{PDG_2024}. 
+
+Radiative losses, such as \emph{bremsstrahlung}, occur when the charged particle is deflected through Coulomb scattering off a target atom, while \emph{pair production} involves the creation of an electron-positron pair by an emitted photon. \emph{Photonuclear interactions} occur when a photon emitted by the particle disintegrates an atomic nucleus. These radiative losses are stochastic and scale roughly linearly with the particle's energy, with the radiation length $ X_0 $ defining the distance over which the particle’s energy decreases to $ \frac{1}{e} $ of its initial value \cite{PDG_2024}. The overall energy loss can be expressed as $ -\frac{dE}{dx} = a(E) + b(E)E $, where $ a(E) $ represents ionization losses and $ b(E) $ encompasses all radiative losses.
+
+
+\subsubsection{Leptons}
+\label{sec:leptons_inice}
+To determine a neutrino's flavor, it's important to understand the energy losses of the charged lepton created in a CC-interaction. The radiation length varies depending on the lepton's mass, influencing emitted radiation and aiding in lepton identification. For leptons with $ \beta\gamma \gg 1 $, this ionization loss can be approximated as constant, with a value of $ \langle \frac{dE}{dx} \rangle_{\text{ion}} \approx 2 \, \text{MeV/(g/cm}^2) $ \sidecite{Perkins}. In ice, this corresponds to a continuous energy loss of approximately 180 MeV per meter. However, at energies exceeding 1 TeV, which are pertinent to IceCube analyses, radiative losses become dominant, and ionization losses become negligible, as shown in the \reffig{e_loss} \sidecite{MMC_paper}. 
+
+For electrons, we mainly consider radiative losses, especially bremsstrahlung. Electrons are stable and do not decay. Photons from bremsstrahlung then create additional $e^+ \, e^-$ pairs which can create more photons and so on, resulting in a cascade of particles until the energies of electrons and positrons fall below the critical level. This behavior can be described by a gamma distribution, regardless of what the initiating particle is ($e^+ \, e^- \mathrm{or} \gamma$) \cite{PDG_2024}. The rate of energy loss over distance can be calculated using the equation:
+\begin{equation}
+    \frac{dE}{dt} = E_0 b \left( \frac{(bt)^{a-1} e^{-bt}}{\Gamma(a)} \right)
+\end{equation}
+
+where $t$ represents the distance along the cascade in units of radiation length, and $E_0$ is the initial energy of the injected particle. For an electromagnetic cascade induced by an electron, the parameters are $a = 2.02 + 0.63 \log(E_0/\text{GeV})$ and $b = 0.63$ (determined using \texttt{GEANT4} simulations \sidecite{shower_profile} ). The distance to the shower maximum, $t_{\text{max}}$, which is given as $\frac{a-1}{b}$ characterizes the size of electromagnetic cascades, indicating that they grow logarithmically in size with energy and have a characteristic size of several meters. This justifies the common approximation that light is emitted from a single point, a useful assumption for simulation and event reconstruction purposes \todo{reference reco chapter here}.
+
+At very high energies ($>10$ PeV), the Landau-Pomeranchuk-Migdal (LPM) effect becomes significant, causing suppression of bremsstrahlung and pair production cross sections \sidecite{LPM1,LPM2,LPM3}. This suppression occurs due to destructive interference between multiple scattering centers, leading to elongated and irregular shower profiles.
+
+
+
+\begin{figure}
+	\centering \includegraphics{./figures/nu_in_icecube/energylosses.pdf}
+	\caption{The average energy loss rate per energy, for electrons (left) and muons (right) in
+    ice showing the contributions from ionization, bremsstrahlung, photonuclear interactions, and pair production. Note that  from [152].}
+    \labfig{e_loss}
+\end{figure}
+
+ 
+
+
+Additionally, if the lepton is unstable, it may decay. The decay time in the laboratory frame is dilated, as described by special relativity, and the propagation distance before decay, known as the decay length $ \lambda_{\text{dec}} $, is given by $ \lambda_{\text{dec}} = c\beta\gamma\tau $. Here, $ c $ is the speed of light, $ \beta $ is the lepton's velocity as a fraction of the speed of light, $ \gamma $ is the Lorentz factor, and $ \tau $ is the lepton's lifetime in its rest frame ($\tau_{\mu} = 2.2\times10^{-6} \, \text{s}$ and $\tau_{\tau} = 290.3\times10^{-15} \, \text{s}$ \cite{PDG_2024}). In the context of IceCube, secondary leptons travel at nearly the speed of light, simplifying $ \beta $ to approximately 1. Thus, the decay length can be rewritten as $ \lambda_{\text{dec}} = \frac{E\tau}{mc} $, where $ E $ is the lepton's energy and $ m $ its mass. The decay length indicates the distance at which the lepton's survival probability drops to $ \frac{1}{e} \approx 36.8\% $, following the exponential decay law $ p(L) = \exp(-L/\lambda_{\text{dec}}) $. For instance, a 1 TeV muon has a decay length of around 6242 km, while a tau lepton of the same energy has a much shorter decay length of approximately 4.9 cm, reflecting the significant mass difference between the muon and tau ($m_{\mu} = 105.67 \, \text{MeV}/c^2$, $m_{\tau} = 1776.93 \, \text{MeV}/c^2$) \cite{PDG_2024}.
+
+\subsubsection{Hadrons}
+\label{sec:hadrons_inice}
+
+
+\subsection{Cherenkov effect}
+\label{sec:cherenkov}
+
+\subsection{Event Signatures}
+\label{sec:morphologies}
+
+
 \section{Optical Properties of the South Pole ice}
-The ice at the South Pole is a crucial part of the IceCube detector. It acts as both the detection target and the medium through which light propagates. Unlike the DOM hardware, which has been extensively studied in the laboratory, the glacial ice can only be measured in its actual environment, making it more challenging to describe. Understanding and calibrating this medium well is essential for accurate physics measurements,as it affects the systematic uncertainties in the measurements. The optical properties of the South Pole ice were first studied using ice cores from deep regions below 2000 m, collected from drill sites about 1000 km away from the South Pole. The deep South Pole ice was initially measured with the LED calibration system of AMANDA. Additionally, during the construction of IceCube, dust concentrations in the glacial ice were measured using a dust logger deployed into some drill holes.
 \label{sec:icemodel}
+\begin{marginfigure}
+	\centering \includegraphics{./figures/nu_in_icecube/abs_scat.pdf}
+	\caption{Values of effective scattering (left) and absorption (right) coefficents of 400nm photons in South Pole Ice as a function of depth, for four icemodels described in the text. Light grey area shows in-ice array and dark grey region shows the high absorption and scattering region called \emph{the dust layer}.}
+    \labfig{abs_scat}
+\end{marginfigure}
+The ice at the South Pole is a crucial part of the IceCube detector. It acts as both the detection target and the medium through which light propagates. Unlike the DOM hardware, which has been extensively studied in the laboratory, the glacial ice can only be measured in its actual environment, making it more challenging to describe. Understanding and calibrating this medium well is essential for accurate physics measurements as photons produced from particle interactions can get absorbed or scattered from their path, making the inference of the particle interaction points challanging.
+
+In context of Neutrino Detection, The ice at the deep South Pole was initially measured using pulsed in situ light sources (LEDs) at different wavelengths, embedded in the AMANDA array below ~1000 m depth\sidecite{optical_properties_amanda}. Later, during the construction of IceCube, direct measurements of dust concentration in the glacial ice were obtained using a dust logger deployed into some drill holes \sidecite{dust_logger}. Additionally, the LEDs on the Flasher Board of DOMs are still actively used to calibrate the detector and understand the ice properties \sidecite{spicemie}. 
+
+\textbf{The scattering length ($\mathrm{l}_s$)} is the average distance a photon will travel before scattering off of its orignal directory. In practice, only the effective scattering length ($\mathrm{l}_\mathrm{eff}$ = $\frac{\mathrm{l}_s}{1 - \langle\cos\theta\rangle}$) can be measured, where $\langle\cos\theta\rangle$ is the average deflection angle at each scatter. \textbf{The absorption length ($\mathrm{l}_a$)} is the distance after which a photon's survival probability decreases to 1/e, indicating how far the information from an event can travel. In the case of absorption, the photon is lost, while for scattering, its direction changes, affecting both the energy and direction reconstruction of the event. Scattering and absorption parameters in \emph{ice models} are averaged over 10-meter-thick layers of ice and are calculated for a wavelength of 400 nm \cite{spicemie}. Light scattering below a depth of about $\sim$1300 m is mainly due to residual air bubbles. As depth increases, dust becomes the main source of scattering, with concentration varying due to climate and volcanic activity. At around 2000 meters, scattering and absorption significantly increase due to high dust concentration, possibly from a major volcanic eruption in the past, known in IceCube as \textbf{the dust layer} \sidecite{dustlayer} (see \reffig{abs_scat}). This layer is either ommitted or treated more carefully in most analyses as information carried by photons coming and going throught this layer is difficult to traceback due to higher scattering coeeficient.
+\begin{figure}
+	\centering \includegraphics{./figures/nu_in_icecube/bfr_illustration.png}
+	\caption{The visualisation of deflection due to birefringence. Without it (left panel), light streams out radially from an isotropic source. With this effect however (right panel), rays get deflected towards the flow axis, appearing as though photons are scattered "more" along this axis. The IceCube array around the light source can be seen as well. (Figure taken from \cite{BFR_paper})}
+    \labfig{bfr_effect}
+\end{figure}
+
+The data from the dust logger also revealed that the ice layers are not perfectly horizontal; they are tilted due to the uneven surface of the bedrock \cite{dust_logger}, the so-called \textbf{ice tilt}. Initially, the effect was symmetrically parameterized along an axis (reffered to as \emph{the tilt axis}) that is approximately perpendicular to the glacial flow and also dependent on depth (same as the layers used to characterise absorption and scatetring lengths described before)\cite{spicemie}. As a result, the scattering and absorption coefficients became dependent on the full three-dimensional position in the ice rather than just the depth. A recently developed fully volumetric tilt model now includes a newly discovered tilt component along the flow \sidecite{tilt_icrc}.
+
+
+Another unique property that the South Pole ice exhibits is optical \textbf{anisotropy}, a phenomenon affecting photon propagation depending on their direction relative to the "axis of anisotropy," which coincides within $\sim 1^\circ$ with the direction of the ice flow \cite{spicemie}. This effect was initially implemented as a modification to the scattering function, the only remaining Mie scattering parameter \sidecite{miescattering}, thereby changing the scattering length \sidecite{bfr_icrc2013,marcel_thesis}.  However, recent detailed studies suggest that this behavior results from diffusion within the polycrystalline ice microstructure, a previously unknown optical effect, now known as Birefringence \sidecite{bfr_icrc2019,BFR_paper}. This effect causes the ice crystals to slowly but continuously deflect towards the normal vector of the girdle plane of the crystal orientation fabric (the ice flow axis), as can be seen in \reffig{bfr_effect}.
+
+
+
+In the context of the IceCube Detector, South Pole ice can be divided into two types: bulk ice and hole ice. Bulk ice is the undisturbed part of the ice, consisting of sheets that have formed over hundreds of thousands of years, properties of which are described above. \textbf{Hole ice}, on the other hand, is the refrozen column of ice that was melted during the deployment of the DOMs \sidecite{holeice_dima_icrc21}. This effect generally affects the forward acceptance of the IceCube DOMs. If not taken care of, it can lead to errors in directional information, therby affecting measurements involving zenith angle reconstructions of the incoming neutrino. Over the years, many efforts have been made to understand various optical properties of the South Pole ice, by fitting the LED data in terms of absorption and scattering lengths of a cherenkov photon in ice, the so-called \textbf{\emph{South Pole ICE model (SPICE model)}}. These icemodels are used in both simulation and reconstruction of the events, where particles produced in neutrino interactions are propagated (see \ref{sec:particle_propgation}) based scattering and absorption lengths described by the model. While the base model for the scattering of the photons in-ice is Mie Scattering theory \cite{miescattering} (SPICE MIE), with more dust loggers data, evolved more complex models to include, aniostropy (SPICELea), addition of tilt (SPICELea, SPICE 3.2.1), birefringence to explain anisotropy (SPICEBfr) and the latest, SPICE FTP, which includes a 2D tilt corretion in addition to birefringence. \reffig{abs_scat} shows absorption and scattering coefficients for different ice models at various depths in the detector. The corresponding scattering and absorption lengths are simply the inverse of the coefficients. It can be seen that the ice below the depth of $\sim$ 1400 m is so clear that light can travel for hundreds of meters before being absorbed. However, the light diffuses quickly, making a point-like source appear nearly isotropic at a distance of around 100 m. Effect of different icemodel corrections (specifically that of anisotropy related corrections) becomes quite relevant to reconstruct tau-neutrino events in IceCube, which is heart of the analysis presented in this thesis.
+
 
