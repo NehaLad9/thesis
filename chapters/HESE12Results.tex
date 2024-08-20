@@ -1,14 +1,25 @@
 \setchapterpreamble[u]{\margintoc}
 \chapter{Results}
 \labch{HESE12}
+The 7.5 years of HESE data (2010-2017) was previously used to measure the composition of astrophysical neutrino flavors \sidecite{Juliana_paper} (in particular to search for $\nu_{\tau}$ events) and energy spectrum \sidecite{HESE7_sample}. This dataset included 102 events, (of which 60 events were above 60 TeV), that passed the HESE selection criteria, as outlined in section \ref{sec:HESE}. Two events were identified as Double Cascade candidates using the particle identifier described in section \ref{sec:PID}. 
+
+While the selection criteria and particle identification remain consistent, several key differences distinguish the analysis presented in this thesis from prior iterations. The most significant change lies in the ice model. As detailed in section \ref{sec:icmodel}, ice model properties—especially anisotropy—strongly influence the reconstruction of tau decay length. If not properly addressed, this can introduce bias in correctly tagging Double Cascade events. The ice model used in this analysis, SpiceBfr, can also impact the number of photons collected over time \sidecite{BFR_paper}, depending on the alignment of DOMs with respect to the iceflow axis. This, in turn, can affect overall energy estimates. Additionally, the treatment of detector systematics has changed; this analysis utilizes the SnowStorm method (see section \ref{sec:snowstorm}), whereas previous iterations relied on discrete Monte Carlo simulation sets. Another difference is also updated reconstruction tables used for maximum likelihood reconstruction method described in section \ref{sec:reco}. Other small corrections have also been applied to monte carlo simulations in terms of reweighting them to include corrections due to tau polarization and initial state radiation corrections to the Glashow cross-sections (see section \ref{sec:PID}). Other differences include variations in nuisance parameters and analysis software (see section \ref{sec:components}). Due to these changes, the 7.5 years of HESE data was re-unblinded as a first step.
+
+This chapter presents flavor measurements made using 12 years of HESE data. It begins by discussing the re-unblinding of 7.5 years of data, followed by results from the 12-year fit, including Data-Monte Carlo agreement and detailed post-unblinding checks. Finally, the flavor measurement results are presented and interpreted in the last sectinons.
+
+\section{(Re)Unblinding of 7.5 years of HESE Data}
+\label{sec:HESE7}
+The re-unblinding of the HESE-7.5 data provided new insights, revealing that 64 events met the HESE selection criteria, each with a deposited energy exceeding 60 TeV. It included 6 Double Cascade events, as summarized in Table 1, which is a significant increase from the previous analysis that identified only two Double Cascade events. Notably, 4 of the additional events had initially been classified as single cascades. The reclassification was largely driven by the application of the energy asymmetry cut, which proved to be a crucial factor in differentiating between single and double cascades (see section \ref{sec:PID}). Despite the changes in classification, the two common Double Cascade events identified in both iterations exhibited nearly identical reconstructed properties, as outlined in Table 2.
+
+A key difference in this re-unblinding analysis was the inclusion of high quantum efficiency Digital Optical Modules (DOMs) from DeepCore. In prior analyses, these DOMs were excluded from the reconstruction of high-energy neutrino events, particularly in millipede-based reconstructions (detailed in Section 4). The reason for their exclusion was due to their smaller statistical uncertainties, compared to the larger systematic uncertainties associated with digitized waveforms. These systematic uncertainties, not being well-characterized for individual DOMs, could not be incorporated into the likelihood fitting process. However, advancements in simulation, including improved reconstruction tables and detector simulations, DeepCore DOMs were included for the analysis presneted in this thesis.
+
+Following the observation of increased number of double cascade events, detailed checks were conducted to explore why Monte Carlo predictions had underestimated the number of Double Cascade events. Figure X shows the monte carlo distribution of Double Cascade classifications, both with and without the inclusion of DeepCore DOMs. The monte carlo simulations predicted only 2-3 Double Cascade events, yet the data revealed 6 Double Cascade events when DeepCore DOMs were included and only 3 when they were excluded. This discrepancy pointed to potential issues in either the simulation or reconstruction processes involving DeepCore DOMs. Additionally, the charge distribution of DeepCore DOMs relative to the total charge of these events uncovered another discrepancy: while the MC simulations remained consistent, the real data distribution differed significantly between the cases where DeepCore DOMs were included or excluded. This raised concerns about the accuracy of the simulation and the treatment of DeepCore DOMs, indicating that further investigation at the MC level is necessary.
+
+Considering the historical exclusion of DeepCore DOMs (as well as other "bad" DOMs like bright or saturated modules) from previous reconstruction chains, this analysis ultimately decided not to include DeepCore DOMs in the full sample unblinding. Consequently, the re-unblinding of the HESE-7.5 data resulted in 62 events with deposited energies above 60 TeV. Of these, 45 were classified as single cascades, 3 as Double Cascades, and 14 as track events. A detailed comparison between these newly unblinded results and previous results, including morphologies and reconstructed properties, is presented in the accompanying tables.
+
+
 
 \section{Fit results}
-\label{sec:fit_results}
-
-\subsection{(Re)Unblinding of 7.5 years of HESE Data}
-\label{sec:HESE7}
-
-\subsection{Fit results of 12 years of HESE Data}
 \label{sec:HESE12}
 
 \section{Data/Monte Carlo Agreement}
