@@ -15,7 +15,7 @@
 %use to have line numbers 
 % \usepackage{lineno}
 % \linenumbers
-
+\usepackage{makecell}
 
 \usepackage{longtable}
 \usepackage{booktabs}
@@ -212,3 +212,11 @@
     draw=lightgray204,
     fill=white
 ]
+
+\usepackage{tikz}
+\newcommand\wye[1][]{%
+    \tikz\draw[thick, line cap=round,x=1ex,y=1ex,#1]
+    (0,0) -- ++(90:1)
+    (0,0) -- ++(-30:1)
+    (0,0) -- ++(-150:1);
+}
