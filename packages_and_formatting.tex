@@ -16,7 +16,7 @@
 % \usepackage{lineno}
 % \linenumbers
 \usepackage{makecell}
-
+\usepackage{hyperref}
 \usepackage{longtable}
 \usepackage{booktabs}
 \usepackage{tabularx}
@@ -24,8 +24,12 @@
 \sisetup{
    separate-uncertainty
 }
+
 \usepackage{physics}
 \usepackage{courier}
+\usepackage{amstext} % for \text macro
+\usepackage{array}   % for \newcolumntype macro
+\newcolumntype{L}{>{$}l<{$}} % math-mode version of "l" column type
 
 % Load the bibliography package
 \usepackage[giveninits=true]{kaobiblio}
@@ -53,6 +57,7 @@
 \def\ue4{$|U_{e4}|^2$}
 \def\um4{$|U_{\mu4}|^2$}
 \def\ut4{$|U_{\tau4}|^2$}
+
 
 
 % Load mathematical packages for theorems and related environments
@@ -177,6 +182,9 @@
         y explicit
     ] table [x=bin_midpoints, y=#2, y error=#2__err]  from \table;
 }
+
+\newcommand\barp[1]{\overset{%
+\scriptscriptstyle(-)}{#1}}
 
 % This package changes the font to serif when compiling with Lualatex (and doesn't)
 % work correctly without Lualatex.
