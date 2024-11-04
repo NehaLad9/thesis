@@ -44,22 +44,22 @@
 \tableofcontents
 
 \mainmatter
-\include{chapters/introduction}
+% \include{chapters/introduction}
 % \include{chapters/neutrino_phenomenology}
 % \include{chapters/neutrino_he}
 % \include{chapters/neutrino_icecube}
-% \include{chapters/EventSamples}
+\include{chapters/EventSamples}
 % \include{chapters/FlavourAnalysis}
 % \include{chapters/HESE12Results}
-% \include{chapters/Gen2results}
-\include{chapters/Summary}
+\include{chapters/Gen2results}
+% \include{chapters/Summary}
 \cleardoublepage
 
 \appendix
 \pagelayout{wide}
 \addpart{Appendix}
 \pagelayout{margin}
-% \input{chapters/Appendix.tex}
+% \include{chapters/Appendix}
 
 \backmatter
 
@@ -78,8 +78,8 @@
 \defbibnote{bibnote}{Here are the references in citation order.\par\bigskip}
 \printbibliography[heading=bibintoc, title=Bibliography, prenote=bibnote]
 
-%\include{acknowledgements}
+% \include{chapters/acknowledgements}
 
-% \input{declaration.tex}
+% \include{declaration}
 
 \end{document}
