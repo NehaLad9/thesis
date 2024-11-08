@@ -8,7 +8,7 @@ Siginificant portion of this thesis work was dedicated to assess IceCube Gen2's 
 IceCube-Gen2 is a proposed next generation of neutrino detector, designed to observe the neutrino sky within a wide energy range, from TeV to EeV \sidecite{whitepaper}. Its sensitivity is expected to be at least five times better than IceCube, enabling the observation of individual sources. The instrument layout is designed to detect about ten times more neutrinos annually as compared to IceCube. This increased capability will facilitate in-depth studies of the distribution of neutrinos across the sky, energy spectrum, and flavour composition, as well as beyond-the-Standard-Mode.
 \begin{figure}[h!]
 	\includegraphics[scale=1.5]{./figures/gen2/decadal_survey_gen2-fan_radio_geometry.pdf}
-	\caption{Figure depicts the proposed IceCube-Gen2 Neutrino Observatory facility at the South Pole. It includes (from left to right) (i) a radio array with 200 stations, (ii) 120 new in-ice strings, spaced 240 m apart (shown as orange points), as an expansion of (iii) current optical array, (iv) 7 strings of IceCube upgrade, to be deployed soon within currrent in-ice DeepCore volume. Figure taken from \cite{whitepaper}}
+	\caption[Layout of IceCube-Gen2 geometry]{Figure depicts the proposed IceCube-Gen2 Neutrino Observatory facility at the South Pole. It includes (from left to right) (i) a radio array with 200 stations, (ii) 120 new in-ice strings, spaced 240 m apart (shown as orange points), as an expansion of (iii) current optical array, (iv) 7 strings of IceCube upgrade, to be deployed soon within currrent in-ice DeepCore volume. Figure taken from \cite{whitepaper}}
 	\labfig{gen2_all_geometry}
 \end{figure}
 
@@ -28,7 +28,7 @@ For the sensitivity study presented in this thesis, only the optical part of the
 
 \begin{figure}
 	\includegraphics[scale=2.2]{./figures/gen2/Gen2_DOMs.pdf}
-	\caption{The designs of the IceCube-Gen2 optical sensors, DOM-16(second) and DOM-18 (third) with their base designs, to be used in the IceCube Upgrade sensors, are the mDOM on the left and D-Egg on the right \cite{Gen2_TDR}}
+	\caption[Designs of candidate optical modules for IceCube-Gen2]{The designs of the IceCube-Gen2 optical sensors, DOM-16(second) and DOM-18 (third) with their base designs, to be used in the IceCube Upgrade sensors, are the mDOM on the left and D-Egg on the right \cite{Gen2_TDR}}
 	\labfig{Gen2DOMs}
 \end{figure}
 
@@ -56,7 +56,7 @@ The effective area of the optical modules is the equivalent physical cross-secti
 
 \begin{figure}
     \includegraphics{./figures/gen2/EffectiveAreaCurve_TDR.pdf}
-    \caption{The effective area is compared for IceCube-Gen2 DOM candidates, 16, and 18 PMT models, in relation to IceCube-Gen1 DOM (pDOM), D-Egg, and mDOM, as functions of zenith angle (left) and wavelength averaged over solid angle (right). Figure taken from \cite{Gen2_TDR}} 
+    \caption[DOM effective area comparisons of Multi-PMT modules with a current single PMT DOM of IceCube]{The effective area is compared for IceCube-Gen2 DOM candidates, 16, and 18 PMT models, in relation to IceCube-Gen1 DOM (pDOM), D-Egg, and mDOM, as functions of zenith angle (left) and wavelength averaged over solid angle (right). Figure taken from \cite{Gen2_TDR}} 
     \labfig{EffectiveArea_mDOM}
 \end{figure}
 
@@ -64,13 +64,13 @@ However, current simulation methods used in IceCube (see Section~\ref{sec:mc_sim
 
 \begin{marginfigure}
     \includegraphics{./figures/gen2/iso-pDOM.pdf}
-    \caption{Conceptual representation of Simulated sensor with isotropic angular acceptance (iso-pDOM)}
+    \caption[Schematic of an isoPDOM]{Conceptual representation of Simulated sensor with isotropic angular acceptance (iso-pDOM)}
     \labfig{isoPDOM_schematic}
 \end{marginfigure}
 
 \begin{marginfigure}
     \includegraphics{./figures/gen2/isopDOM_eff_area.png}
-    \caption{Results of simulating a sensor that \emph{mimics} the behaviour of a typical mDOM. The blue line shows changed effective area of the so-called \emph{isopDOM}, achieved by combining acceptance curves of pDOMs having a PMT in "upper" (orange) and "lower" (grey) halves of the DOM respectively}
+    \caption[Effective area of isoPDOM]{Results of simulating a sensor that \emph{mimics} the behaviour of a typical mDOM. The blue line shows changed effective area of the so-called \emph{isopDOM}, achieved by combining acceptance curves of pDOMs having a PMT in "upper" (orange) and "lower" (grey) halves of the DOM respectively}
     \labfig{isoPDOM_effarea}
 \end{marginfigure}
 
@@ -97,7 +97,7 @@ After applying all the necessary filters, the final sample includes starting eve
         \includegraphics{./figures/gen2/Bkg_PDF.png}
        
     \end{subfigure}
-    \caption{2D Monte Carlo templates, constructed using reconstructed total energy ($E_{\text{Tot}}$) and double cascade length ($L_{\text{dc}}$) for events classified as \textbf{double cascades}. The signal (left), representing $\nu_\tau$-induced double cascades, shows a clear correlation between $L_{\text{dc}}$ and $E_{\text{tot}}$. In contrast, the background (right), consisting of $\nu_\mu$ and $\nu_e$ events, lacks this correlation and clusters at low $L_{\text{dc}}$.}
+    \caption[2D Monte Carlo PDFs of reconstruct energy and length for double cascade events in IceCube-Gen2]{Two dimensional Monte Carlo templates, constructed using reconstructed total energy ($E_{\text{Tot}}$) and double cascade length ($L_{\text{dc}}$) for events classified as \textbf{double cascades}. The signal (left), representing $\nu_\tau$-induced double cascades, shows a clear correlation between $L_{\text{dc}}$ and $E_{\text{tot}}$. In contrast, the background (right), consisting of $\nu_\mu$ and $\nu_e$ events, lacks this correlation and clusters at low $L_{\text{dc}}$.}
     \labfig{DC_PDFs}
     
 \end{figure*}
@@ -126,7 +126,7 @@ Using the HESE-like sample, described in Section~\ref{sec:gen2_eventsample}, a d
 \begin{figure}[h!]
     \centering
       \includegraphics{./figures/gen2/SelectionEff.pdf}
-      \caption{Selection Efficiency : Ratio of neutrinos that got classified into a topology to all the neutrinos that interacted in active volume. Data here refers to monte-carlo events per energy bin.}
+      \caption[Selection Efficiency of HESE-like selection in IceCube-Gen2]{Selection Efficiency : Ratio of neutrinos that got classified into a morphology to all the neutrinos that interacted in active volume. Data here refers to monte-carlo events per energy bin.}
   \labfig{selecteff}
   \end{figure}
 
@@ -138,7 +138,7 @@ A specific parameterized tensor is used to determine the efficiency of particle 
 
     \centering
     \includegraphics{./figures/gen2/ClassificationEff_small_watermark.pdf}
-    \caption{Classification Efficiency: Three subplot columns are true neutrino flavours, where each energy bin (true Monte Carlo energy) contains the fraction of topologies, summing to 100\%. Diagonal plots show the flavour identification efficiency of the classifier, whereas off-diagonal plots show misidentification fractions.
+    \caption[Classification efficiency of a ternary particle identifier for IceCube-Gen2]{Classification Efficiency: Three subplot columns are true neutrino flavours, where each energy bin (true Monte Carlo energy) contains the fraction of topologies, summing to 100\%. Diagonal plots show the flavour identification efficiency of the classifier, whereas off-diagonal plots show misidentification fractions.
     }
     \labfig{classeff}
 \end{figure}
@@ -149,7 +149,7 @@ Lastly, a significant advantage of \texttt{toise} is its ability to combine diff
 
 \begin{figure}[h!]
     
-    \caption{Projected sensitivity of IceCube-Gen2 to measure flavour composition of Astrophysical neutrino with 10 years of its lifetime. The maroon line shows sensitivity using the ternary classification scheme and light salmon shade shows sensitivity \textbf{without} a dedicated $\nu_{\tau}$ identifier. The unresolved degeneracy along $\nu_e$/$\nu_{\tau}$ axis is notable due to lack of double cascade classifier. The solid (dashed) lines depict the corresponding 68\% (99\%) constraints, derived assuming Wilks' theorem.}
+    \caption[Sensitivity of IceCube-Gen2 to measure flavour composition of Astrophysical neutrino with 10 years of its lifetime]{Projected sensitivity of IceCube-Gen2 to measure flavour composition of Astrophysical neutrino with 10 years of its lifetime. The maroon line shows sensitivity using the ternary classification scheme and light salmon shade shows sensitivity \textbf{without} a dedicated $\nu_{\tau}$ identifier. The unresolved degeneracy along $\nu_e$/$\nu_{\tau}$ axis is notable due to lack of double cascade classifier. The solid (dashed) lines depict the corresponding 68\% (99\%) constraints, derived assuming Wilks' theorem.}
     \includegraphics{./figures/gen2/Gen2-10Years.pdf}
     
     \labfig{Gen2_flavourtriangle}
@@ -160,7 +160,7 @@ The sensitivity shown in \reffig{Gen2_flavourtriangle} and applies to the entire
 \begin{figure}[h!]
 \centering
     \includegraphics{./figures/gen2/MuonDamped.pdf}
-    \caption{The bottom section displays the proportion of $\nu_{\mu}$ at the source based on energy, with the assumption that the muon critical energy is 2 PeV. The error bars represent the 68\% confidence level limitations on the $\nu_{\mu}$ fraction below and above 1 PeV, derived from the observed flavour composition of $\nu_{\mu}$ at Earth using IceCube-Gen2 and assuming standard oscillations. In the upper sections, the dark (light) shaded regions depict the corresponding 68\% (99\%) constraints, without making any assumptions about the mixing matrix.}
+    \caption[Sensitivity of IceCube-Gen2 to measure an energy dependent flavour composition of Astrophysical neutrino]{The bottom section displays the proportion of $\nu_{\mu}$ at the source based on energy, with the assumption that the muon critical energy is 2 PeV. The error bars represent the 68\% confidence level limitations on the $\nu_{\mu}$ fraction below and above 1 PeV, derived from the observed flavour composition of $\nu_{\mu}$ at Earth using IceCube-Gen2 and assuming standard oscillations. In the upper sections, the dark (light) shaded regions depict the corresponding 68\% (99\%) constraints, without making any assumptions about the mixing matrix.}
     \labfig{gen2_muondamped}
 \end{figure}
 
@@ -170,7 +170,7 @@ The power of combining different event samples, extension of detector volume alo
 \begin{figure*}[h!]
     \centering
         \includegraphics{./figures/gen2/energy_dependence_Gen2_TA-GZK.pdf}
-        \caption{A combined sensitivity to measure evolution of the neutrino flavour composition with energy ranges from TeV to EeV range, using both optical and radio components of IceCube Gen2 Detector. Astrophysical neutrino sources are generally expected to be dominated by pion decay at the lowest energies, with a flavour composition of approximately (1:2:0). At intermediate energies, the sources transition to a muon-damped production regime, yielding a flavour ratio of roughly (0:1:0). Finally, at the highest energies, the composition reverts to the pion decay pattern, (1:1:1), as anticipated for cosmogenic neutrino production. The details for layout are similar to that shown in \reffig{gen2_muondamped}. The extended figure, taken from \cite{Coleman}.}
+        \caption[A combined sensitivity of IceCube-Gen2 to measure flavour composition of Astrophysical neutrino using both optical and radio components of the detector]{A combined sensitivity to measure evolution of the neutrino flavour composition with energy ranges from TeV to EeV range, using both optical and radio components of IceCube Gen2 Detector. Astrophysical neutrino sources are generally expected to be dominated by pion decay at the lowest energies, with a flavour composition of approximately (1:2:0). At intermediate energies, the sources transition to a muon-damped production regime, yielding a flavour ratio of roughly (0:1:0). Finally, at the highest energies, the composition reverts to the pion decay pattern, (1:1:1), as anticipated for cosmogenic neutrino production. The details for layout are similar to that shown in \reffig{gen2_muondamped}. The extended figure, taken from \cite{Coleman}.}
         \labfig{gen2_radioincluded_flavour}
     \end{figure*}
 
