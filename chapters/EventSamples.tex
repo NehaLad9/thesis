@@ -49,7 +49,7 @@ Once a particle interaction occurs, the next step is to generate and propagate s
 \subsubsection*{Photon Propagation}
 \begin{marginfigure}
     \includegraphics{./figures/EventSample/Icecube_muon_photons.png}
-    \caption{Light emission pattern of a simulated muon track event, using the direction propagation program \texttt{CLSim}. The colored lines show individual photon paths through ice, with red indicating earlier and blue indicating later compared to an unscattered photon. Figure taken from \cite{IC_photon_picture}}
+    \caption[Light emission pattern of a simulated muon track event]{Light emission pattern of a simulated muon track event, using the direction propagation program \texttt{CLSim}. The colored lines show individual photon paths through ice, with red indicating earlier and blue indicating later compared to an unscattered photon. Figure taken from \cite{IC_photon_picture}}
     
     \labfig{IC_photons}
 \end{marginfigure}
@@ -67,7 +67,7 @@ As described in previous section, specifically for photon propagation stage prec
 \begin{marginfigure}
     \vspace*{-7.5cm}
 	\includegraphics{./figures/EventSample/snowstorm.pdf}
-	\caption{Illustration of the SnowStorm method described in the text. It depicts the contrast between numerous discrete shifts in nuisance parameters (indicated by red squares), each necessitating an entire Monte Carlo set, in comparison to a single SnowStorm Monte Carlo (represented by small blue dots). Figure taken from \cite{snowstorm}.}
+	\caption[Illustration of the SnowStorm method]{Illustration of the SnowStorm method described in the text. It depicts the contrast between numerous discrete shifts in nuisance parameters (indicated by red squares), each necessitating an entire Monte Carlo set, in comparison to a single SnowStorm Monte Carlo (represented by small blue dots). Figure taken from \cite{snowstorm}.}
 	\labfig{snowstorm}
 \end{marginfigure} 
 A new approach to model detector systematic uncertainties has been developed in IceCube, called \textbf{SnowStorm Method} \sidecite{snowstorm}. The significant difference compared to the discrete systematics approach described above is that each detector systematic parameter continuously varied while generating the MC events, as visualized in \reffig{snowstorm}. Using the SnowStorm method, one obtains a single MC set representing all variations in the detector response. This can help an analysis by reducing the bookkeeping effort necessary for using multiple discrete sets, studying variations in a large number of detector systematic parameters at once without loss in statistics, and allowing analyses of different event selections to use the same MC set and "marginalize" over all detector systematic parameters that are not relevant for a single analysis.
@@ -81,14 +81,14 @@ The High Energy Starting Events (HESE) selection is a comprehensive, all-sky, al
 
 \begin{marginfigure}[-9cm]
 	\includegraphics{./figures/EventSample/veto_diagram_vertical.pdf}
-	\caption{The top view (above) and side view (below) display the veto DOMs and the DOMs within the fiducial volume for HESE. DOMs highlighted in red represent the veto region, while those in blue define the fiducial volume. Events where the initial detected light comes from the veto region are excluded from the analysis. Figure taken from \cite{HESE7_sample}.}
+	\caption[The top view and side view of the veto DOMs and the DOMs within the fiducial volume for HESE]{The top view (above) and side view (below) of the veto DOMs and the DOMs within the fiducial volume for HESE. DOMs highlighted in red represent the veto region, while those in blue define the fiducial volume. Events where the initial detected light comes from the veto region are excluded from the analysis. Figure taken from \cite{HESE7_sample}.}
 	\labfig{veto_region}
 \end{marginfigure}
 The HESE selection is particularly powerful due to its simplicity, as it does not rely on complex reconstructions, making it robust against changes in filtering or reconstruction algorithms. The fact that it is an all-flavour sample, can help break degeneracies caused by different neutrino flavours producing similar event patterns. Additionally, the all-sky nature of HESE allows for the study of the zenith distribution of events, which can distinguish between atmospheric and astrophysical neutrinos. However, HESE does have limitations: the high-energy threshold introduces uncertainty in estimating background contributions and astrophysical parameters, and the veto region reduces the detector's effective volume. An extension of HESE to lower energies, known as Medium Energy Starting Events (MESE), has been developed \sidecite{Jvs_MESE} (and recently updated \sidecite{MESE_ICRC}) to overcome some of these limitations.
 
 \begin{marginfigure}
 	\includegraphics{./figures/EventSample/HESE_Eff_area.pdf}
-	\caption{The neutrino effective areas for the high-energy starting event selection as a function of neutrino energy. The distributions are shown for all neutrino flavours, broken down by various zenith angle ranges.}
+	\caption[The neutrino effective areas for the high-energy starting event selection as a function of neutrino energy]{The neutrino effective areas for the high-energy starting event selection as a function of neutrino energy. The distributions are shown for all neutrino flavours, broken down by various zenith angle ranges.}
 	\labfig{eff_area}
 \end{marginfigure}
 
@@ -102,13 +102,13 @@ The passing fractions used in the analysis presented in this thesis are based on
 
 \begin{marginfigure}
 	\includegraphics{./figures/EventSample/fig1_fluxes_10.pdf}
-	\caption{The Atmospheric neutrino fluxes at \( E_\nu = 10 \, \text{TeV} \). The plot shows the fraction of the flux that is \textbf{not} vetoed, known as \textbf{passing fluxes} (solid lines), alongside the total flux entering the detector (dashed lines) as a function of the cosine of the zenith angle. Figure is adapted from \cite{pass_frac}.}
+	\caption[The atmospheric neutrino fluxes at \( E_\nu = 10 \, \text{TeV} \)]{The atmospheric neutrino fluxes at \( E_\nu = 10 \, \text{TeV} \) and the effect of self-vetoing. The plot shows the fraction of the flux that is \textbf{not} vetoed, known as \textbf{passing fluxes} (solid lines), alongside the total flux entering the detector (dashed lines) as a function of the cosine of the zenith angle. Figure is adapted from \cite{pass_frac}.}
 	\labfig{passing_frac1}
 \end{marginfigure}
 
 \begin{marginfigure}
 	\includegraphics{./figures/EventSample/fig1_fluxes_100.pdf}
-	\caption{The atmospheric neutrino fluxes and the effect of self-vetoing are displayed for a neutrino energy level of \( E_\nu = 100 \, \text{TeV} \), see caption of \reffig{passing_frac1}. Figure atken from \cite{pass_frac}.}
+	\caption[The atmospheric neutrino fluxes and the effect of self-vetoing are displayed for a neutrino energy level of \( E_\nu = 100 \, \text{TeV} \)]{The atmospheric neutrino fluxes and the effect of self-vetoing are displayed for a neutrino energy level of \( E_\nu = 100 \, \text{TeV} \), see caption of \reffig{passing_frac1}. Figure atken from \cite{pass_frac}.}
 	\labfig{passing_frac2}
 \end{marginfigure}
 
@@ -143,7 +143,8 @@ The hypothesis to be compared encompasses the event parameters $(x_s, y_s, z_s, 
 
 \marginnote{\begin{kaobox}[title=\textbf{DeepCore DOM exclusion}]
     DeepCore DOMs have traditionally been excluded from high-energy reconstruction methods like \texttt{millipede}  because it uses spline tables that assume a uniform single photoelectron (SPE) template for all DOMs. However, the higher quantum efficiency of DeepCore DOMs results in significantly different charge collection, meaning their SPE templates differ from those of other DOMs. Recent efforts have updated simulations to address this issue, and hence they are now included in the reconstructions.
-\end{kaobox}}.
+\end{kaobox}}
+
 \textbf{\texttt{monopod}}: \texttt{monopod} does a simple one-particle cascade energy fit, i.e. it assumes a single light source. It minimizes parameters such as the cascade's deposited energy, neutrino direction (azimuth and zenith), cascade vertex position $(x, y, z)$, and vertex time, represented as, $\vec{h} = (x, y, z, t, \theta, \phi, E)$. The reconstructed vertex here refers to the shower maximum, which is the peak of the longitudinal energy loss profile and is typically displaced from the interaction vertex by several meters in the considered energy range.
 
 \textbf{\texttt{taupede}}: The double cascade fitting algorithm, \texttt{taupede}, maximizes the likelihood of two energy depositions with energy $E_1$ and $E_2$ respectively, separated by distance $L_{\mathrm{dc}}$. The second cascade's direction matches the first, and its vertex is determined by the first cascade's vertex, direction, and double cascade length $L_{\mathrm{dc}}$. The parameters for the double cascade hypothesis are $\vec{h} = (x_1, y_1, z_1, t_1, \theta, \phi, E_1, L_{\mathrm{dc}}, E_2)$, with the tau traveling in the same direction as the incoming neutrino due to Lorentz boosting. The light yield and timing at each DOM are compared with expected values from the two energy depositions. For the second cascade's timing, the conditions are $|\vec{x}_2 - \vec{x}_1| = L_{\text{dc}}, \quad t_2 - t_1 = c L_{\text{dc}}$\sidenote{assuming tau travels through the ice at the speed of light $c$.}. 
@@ -164,7 +165,7 @@ As mentioned before, these methods are \texttt{seed} dependent, hence to start w
 
 \begin{figure*}[ht!]
 
-    \caption{The event classification scheme for the Ternary PID. All events passing HESE cuts are reconstructed using the three mentioned algorithms. The first level evaluates reconstruction quality; if the criteria are not met, events are classified as single cascades or tracks based on the likelihood values \(L_{\texttt{monopod}}\) and \(L_{\texttt{SPE16}}\). The second level considers the reconstructed length, using a threshold below which distinct vertices of double cascades appear as a single cascade. The third and fourth levels focus on energy confinement and energy asymmetry, respectively. The last level is added to improve purity of the double cascade sample at high energies where misclassification is prominent due to Glashow events.}
+    \caption[The event classification scheme for the Ternary PID.]{The event classification scheme for the Ternary PID. All events passing HESE cuts are reconstructed using the three mentioned algorithms. The first level evaluates reconstruction quality; if the criteria are not met, events are classified as single cascades or tracks based on the likelihood values \(L_{\texttt{monopod}}\) and \(L_{\texttt{SPE16}}\). The second level considers the reconstructed length, using a threshold below which distinct vertices of double cascades appear as a single cascade. The third and fourth levels focus on energy confinement and energy asymmetry, respectively. The last level is added to improve purity of the double cascade sample at high energies where misclassification is prominent due to Glashow events.}
     \labfig{PID_chain}
     \begin{tikzpicture}[node distance=1.3cm]
 
@@ -275,13 +276,13 @@ where $E_1$ and $E_2$ are reconstructed energies of the first and the second cas
 \end{equation}
 \begin{marginfigure}
 	\includegraphics{./figures/EventSample/EA.pdf}
-	\caption{A sketch of energy asymmetry, a measure of the relative distribution of total deposited energy between the two cascades, as defined in Equation~\ref{eq:EA}. Sketch is adapted from \cite{marcel_thesis}.}
+	\caption[A sketch of energy asymmetry]{A sketch of energy asymmetry, a measure of the relative distribution of total deposited energy between the two cascades, as defined in Equation~\ref{eq:EA}. Sketch is adapted from \cite{marcel_thesis}.}
 	\labfig{EA_fig}
 \end{marginfigure}
 where $E_{1,c}$ and $E_{2,c}$ are the deconvolved energy depositions within 40 m distance of first and second cascades respectively and $E_{\mathrm{tot}}$ is the total deposited energy as defined above. Note that from Equation~\ref{eq:EC}, $E_{\mathrm{C}}=1$ (with $E_{1,c}+E_{2,c}=E_1+E_2=E_{\mathrm{tot}}$) for a $\nu_{\tau}$ induced double cascade, as opposed to tracks which have energy depositions outside the region around the double cascade vertices. It is therefore a suitable estimator to separate single cascades and double cascades from tracks.
 \begin{marginfigure}
 	\includegraphics{./figures/EventSample/EC.pdf}
-	\caption{A sketch of energy confine- ment, a measure of how confined the reconstructed energy depositions E1 and E2 are within 40 m of their reconstructed vertices. Sketch is adapted from \cite{marcel_thesis}.}
+	\caption[A sketch of energy confinement]{A sketch of energy confinement, a measure of how confined the reconstructed energy depositions E1 and E2 are within 40 m of their reconstructed vertices. Sketch is adapted from \cite{marcel_thesis}.}
 	\labfig{EC_fig}
 \end{marginfigure}
 
@@ -308,7 +309,7 @@ The Double Cascade sample is crucial for flavour measurement, necessitating a mo
         \includegraphics{./figures/EventSample/fraction_withmask.pdf}
        
     \end{subfigure}%
-    \caption{Fraction of flavour content per bin in double cascade events. The left panel shows the distribution without the criteria of Total \( E_{\text{deposited}} \geq 3 \) PeV and \( L_{\text{reco}} \leq 20 \) m, indicating \emph{purity contamination} at high energies from \( \bar{\nu}_e \) Glashow events. The right panel presents the distribution after reclassifying double cascades as single cascades under these conditions.}
+    \caption[Fraction of flavour content per bin in double cascade events]{Fraction of flavour content per bin in double cascade events. The left panel shows the distribution without the criteria of Total \( E_{\text{deposited}} \geq 3 \) PeV and \( L_{\text{reco}} \leq 20 \) m, indicating \emph{purity contamination} at high energies from \( \bar{\nu}_e \) Glashow events. The right panel presents the distribution after reclassifying double cascades as single cascades under these conditions.}
     \labfig{glashow_mask}
 \end{figure*}
 
@@ -320,7 +321,7 @@ To address this, \textbf{a reclassification} mask was introduced at the end of t
 As discussed in Section~\ref{sec:morphologies}, a $\nu_{\tau}$-CC interaction always produces a tau lepton, which has various decay modes. The tau lepton produced in this interaction is polarised, which can significantly alter the kinematics of the tau decay \sidecite{Tau_Polarisation, Tau_Polarisation_carlos}. Whether the decay mode is leptonic or hadronic, the fraction of energy going to the decay products ($\frac{E_{hadrons/leptons}}{E_{\tau}}$), is affected if non-zero tau polarisation is not taken into account. The \texttt{PROPOSAL} software used in simulation, to simulate secondary charge particle production, propagation and energy losses does not take into account this factor. That is, the Taus produced in a $\nu_{\tau}-$CC interaction is assumed to be produced with no polarisation. Since the signature which is used for identification of this analysis relies on both, the neutrino interaction cascade and tau decay cascade, not taking in account this correction can lead to an \emph{incomplete} simulation of energy loss profiles. Mainly the energy reconstruction of the second decay cascade may get affected, which can further alter the energy asymmetry ($E_{\mathrm{A}}$) of the event, which is used as a selection variable in Ternary Classifier (see \reffig{PID_chain}). 
 \begin{marginfigure}
 	\includegraphics{./figures/EventSample/ISR_glashow.png}
-	\caption{The cross-section for the Glashow resonance process \(\nu_e +e^- \to W^- \to X\) is shown with and without initial state radiation and Doppler broadening. The black curve represents the cross-section without these effects, the blue dotted curve includes initial state radiation, the orange dotted curve shows Doppler broadening, and the red curve combines both effects. Figure taken from \cite{glashow_correcttion1}.}
+	\caption[The cross-section for the Glashow resonance process with and without initial state radiation and Doppler broadening]{The cross-section for the Glashow resonance process \(\nu_e +e^- \to W^- \to X\) is shown with and without initial state radiation and Doppler broadening. The black curve represents the cross-section without these effects, the blue dotted curve includes initial state radiation, the orange dotted curve shows Doppler broadening, and the red curve combines both effects. Figure taken from \cite{glashow_correcttion1}.}
 	\labfig{glashow_corr}
 \end{marginfigure}
 The idea is to test the impact of tau polarisation on analysis variables by reweighting the Monte Carlo events. The calculations provided in \cite{Tau_Polarisation}, are used to get theoretical fractional energy loss of the electromagnetic equivalent visible energy losses, for both polarised and unpolarised states. The ratio of this is multiplied with the simulated fractional energy (which assumed unpolarised taus), to get a new reweighting factor. The change introduced minor difference in the overall observable distributions, hence this was left as a weight correction only and no further analytical checks were performed.
@@ -393,7 +394,7 @@ Such a check between Spice-3.2.1 and SpiceBfr was feasible since the spline tabl
     \labfig{bfrbfr}
 \end{subfigure}
 
-\caption{The length bias of true double cascades, classified as double cascades, as function of Azimuth angle. Vertical lines show the direction of the major anisotropy axis. The caption of each panel states the combination of icemodels used. Each figure also shows reduced value of $\chi^2$ calculated by fitting the shown horizontal line, see text for details.}
+\caption[The length bias of true double cascades, classified as double cascades, as function of Azimuth angle]{The length bias of true double cascades, classified as double cascades, as function of Azimuth angle. Vertical lines show the direction of the major anisotropy axis. The caption of each panel states the combination of icemodels used. Each figure also shows reduced value of $\chi^2$ calculated by fitting the shown horizontal line, see text for details.}
 \labfig{lengtbias}
 \end{figure*}
 
